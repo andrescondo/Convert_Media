@@ -2,11 +2,8 @@ from tkinter import *
 from tkinter import ttk
 from pydub import AudioSegment
 
+#enlace = '/home/andres/Documentos/challenge/python/convert_media/example.mp3'
 
-# def main():
-	#url = str(input('Escriba el nombre del archivo, con las extension: '))
-	#mp3(url)
-	#enlace = '/home/andres/Documentos/challenge/python/convert_media/'
 #
 class Aplication():
 	def __init__(self):
@@ -16,12 +13,12 @@ class Aplication():
 		self.window.configure(bg='#2d2d2d')
 
 		#var
-		url = StringVar(value='.mp3')
+		self.url = StringVar(value='.mp3')
 
 		#create label and entry
-		self.eti1 = ttk.Label(self.window, text='Ingrese el nombre del archivo, con la extensión',bg='#2d2d2d',fg='#fff')
-		self.text = ttk.Entry(self.window, textvariable=url, width=50, bg='beige')
-		self.button1 = ttk.Button(self.window, text='Convertir', width=10, height=1)
+		self.eti1 = Label(self.window, text='Ingrese el nombre del archivo, con la extensión',bg='#2d2d2d',fg='#fff')
+		self.text = Entry(self.window, textvariable=self.url, width=50, bg='beige')
+		self.button1 = Button(self.window, text='Convertir', width=10, height=1, command=self.mp3)
 		self.button2 = ttk.Button(self.window, text='Salir', command=self.window.destroy)
 
 		#.pack()  
@@ -33,9 +30,11 @@ class Aplication():
 		self.window.mainloop()
 
 
-	# def mp3(url):
-	# 	song = AudioSegment.from_mp3(url)
-	# 	song.export('./'+url+'.ogg', format='ogg')
+	def mp3(self):
+		url = self.url.get()
+
+		song = AudioSegment.from_mp3(url)
+		song.export('./'+url+'.ogg', format='ogg')
 
 
 
@@ -46,5 +45,3 @@ def main():
 
 if __name__ =='__main__':
 	main()
-
-
