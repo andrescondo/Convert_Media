@@ -13,21 +13,27 @@ from pydub import AudioSegment
 	#mp3(url)
 	#enlace = '/home/andres/Documentos/challenge/python/convert_media/'
 #
-def interface():
-	window = Tk()
-	window.geometry('500x300')
-	window.title('Convertidor de archivos')
-	window.configure(bg='#2d2d2d')
-	Label(window, text='Ingrese el nombre del archivo, con la extensión',bg='#2d2d2d',fg='#fff').pack(pady=15)
-	url = StringVar()
-	url_entry = Entry(window, textvariable=url, width=50, bg='beige').pack(pady=10)
-	Button(window, text='Convertir', width=10, height=1).pack(pady=10)
-	ttk.Button(window, text='Salir', command=window.destroy).pack(side=BOTTOM, pady=10)
+class Aplication():
+	def __init__(self):
+		self.window = Tk()
+		self.window.geometry('500x300')
+		self.window.title('Convertidor de archivos')
+		self.window.configure(bg='#2d2d2d')
+		self.Label(window, text='Ingrese el nombre del archivo, con la extensión',bg='#2d2d2d',fg='#fff').pack(pady=15)
 
-	window.mainloop()
+		self.url = StringVar()
+		
+		self.url_entry = Entry(window, textvariable=url, width=50, bg='beige').pack(pady=10)
+		self.Button(window, text='Convertir', width=10, height=1).pack(pady=10)
+		self.ttk.Button(window, text='Salir', command=window.destroy).pack(side=BOTTOM, pady=10)
+
+		window.mainloop()
 
 
+def main():
+	my_app = Aplication()
+	return 0
 
 
 if __name__ =='__main__':
-	interface()
+	main()
