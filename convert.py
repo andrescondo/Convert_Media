@@ -10,26 +10,45 @@ from pydub import AudioSegment
 class Aplication():
 	def __init__(self):
 		self.window = Tk()
-		self.window.geometry('600x200')
+		self.window.geometry('650x300')
 		self.window.title('Convertidor de archivos')
 		self.window.configure(bg='#2d2d2d')
 
 		#var
-		self.url = StringVar()
+		self.url = StringVar(value='.extensión')
 
 		#create label and entry
-		self.etiq1 = Label(self.window, text='Ingrese el nombre del archivo, con la extensión',bg='#2d2d2d',fg='#fff', font=("Arial",16))
-		self.text = Entry(self.window, textvariable=self.url, width=70, bg='beige')
-		self.button1 = Button(self.window, text='Convertir', width=10, height=1, command=self.mp4_wav)
+		self.etiq1=Label(self.window,text='Ingrese el nombre del archivo, o la ruta donde se encuentra',bg='#2d2d2d',fg='#fff',font=("Arial",16))
+		# color celeste #b5deda
+		#==================
+		self.tab_control = ttk.Notebook(self.window)
+		self.tab1 = ttk.Frame(self.tab_control)
+		self.tab2 = ttk.Frame(self.tab_control)
+
+		#box Videos
+		self.tab_control.add(self.tab1, text=' VIDEOS ')
+		self.lbl1 = Label(self.tab1, text='Convertir de MP4 a WAV',bg='#2d2d2d',fg='#fff',font=("Arial",13) )
+
+		self.text = Entry(self.tab1, textvariable=self.url, width=80, bg='beige')
+		self.button1 = Button(self.tab1, text='Convertir', width=10, height=1, command=self.mp4_wav)
+
+
+		#box AUDIO
+		self.tab_control.add(self.tab2, text=' AUDIO ')
+		self.lbl2 = Label(self.tab2, text='')
+
 
 		#bottom exit
 		self.button2 = ttk.Button(self.window, text='Salir', command=self.window.destroy)
 
 		#.pack()  
 		self.etiq1.pack(pady=15)
+		self.lbl1.pack(pady=10)
 		self.text.pack(pady=10)
 		self.button1.pack(pady=10)
 		self.button2.pack(side=BOTTOM, pady=10)
+		self.lbl2.pack(pady=10)
+		self.tab_control.pack(expand=1, fill='both')
 
 		self.window.mainloop()
 
