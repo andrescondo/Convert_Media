@@ -14,6 +14,12 @@ class Aplication():
 		self.window.geometry('650x600')
 		self.window.title('Convertidor de archivos')
 		self.window.configure(bg='#2d2d2d')#, cursor='heart'
+		self.scrollbar = Scrollbar(self.window)
+		self.scrollbar.pack(side=RIGHT, fill=Y)
+		self.mylist = Listbox(self.window, yscrollcommand=self.scrollbar.set )
+		self.mylist.insert(END)
+		self.scrollbar.config( command=self.mylist.yview )
+		
 
 		#var
 		self.url = StringVar(value='.extensión')
@@ -49,14 +55,14 @@ class Aplication():
 		self.button3 = Button(self.tab1, text='Convertir', width=10, height=1, command=self.mp4_flv)
 
 		#flv_3
-		self.labl4 = Label(self.tab1, text='Convertir de FLV a MP3',bg='#2d2d2d',fg='#fff',font=("Arial",14) )
-		self.text4 = Entry(self.tab1, textvariable=self.flv_3, width=80, bg='beige')
-		self.button4 = Button(self.tab1, text='Convertir', width=10, height=1, command=self.flv_3)
+		# self.labl4 = Label(self.tab1, text='Convertir de FLV a MP3',bg='#2d2d2d',fg='#fff',font=("Arial",14) )
+		# self.text4 = Entry(self.tab1, textvariable=self.flv_3, width=80, bg='beige')
+		# self.button4 = Button(self.tab1, text='Convertir', width=10, height=1, command=self.flv_3)
 
-		#flv_4
-		self.labl5 = Label(self.tab1, text='Convertir de FLV a MP4',bg='#2d2d2d',fg='#fff',font=("Arial",14) )
-		self.text5 = Entry(self.tab1, textvariable=self.flv_4, width=80, bg='beige')
-		self.button5 = Button(self.tab1, text='Convertir', width=10, height=1, command=self.flv_4)
+		# #flv_4
+		# self.labl5 = Label(self.tab1, text='Convertir de FLV a MP4',bg='#2d2d2d',fg='#fff',font=("Arial",14) )
+		# self.text5 = Entry(self.tab1, textvariable=self.flv_4, width=80, bg='beige')
+		# self.button5 = Button(self.tab1, text='Convertir', width=10, height=1, command=self.flv_4)
 
 
 
@@ -67,7 +73,7 @@ class Aplication():
 
 
 		#bottom exit
-		self.button2 = ttk.Button(self.window, text='Salir', command=self.window.destroy)
+		self.button_exit = ttk.Button(self.window, text='Salir', command=self.window.destroy)
 
 		#====.pack()  
 		self.etiq1.pack(pady=15)
@@ -85,15 +91,15 @@ class Aplication():
 		self.text3.pack(pady=10)
 		self.button3.pack(pady=10)
 
-		self.labl4.pack(pady=10)
-		self.text4.pack(pady=10)
-		self.button4.pack(pady=10)
+		# self.labl4.pack(pady=10)
+		# self.text4.pack(pady=10)
+		# self.button4.pack(pady=10)
 
-		self.labl5.pack(pady=10)
-		self.text5.pack(pady=10)
-		self.button5.pack(pady=10)
+		# self.labl5.pack(pady=10)
+		# self.text5.pack(pady=10)
+		# self.button5.pack(pady=10)
 		
-		self.button2.pack(pady=10)
+		self.button_exit.pack(side=BOTTOM,pady=10)
 		self.lbl2.pack(pady=10)
 		self.tab_control.pack(expand=1, fill='both')
 
