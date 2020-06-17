@@ -6,8 +6,8 @@ from pydub import AudioSegment
 video_dir = str(input('INGRESE EL NOMBRE DEL ARCHIVO: '))
 extension_list = ('*.mp4', '*.flv')
 
-os.chdir(video_dir)
+# os.chdir(video_dir)
 for extension in extension_list:
-    for video in glob.glob(extension):
-        mp3_filename = os.path.splitext(os.path.basename(video))[0] + '.mp3'
-        AudioSegment.from_file(video).export(mp3_filename, format='mp3')
+#     for video in glob.glob(extension):		os.path.basename(video)
+	mp3_filename = os.path.splitext(video_dir)[0] + '.mp3'
+	AudioSegment.from_file(video_dir).export(mp3_filename, format='mp3')
