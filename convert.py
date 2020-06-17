@@ -1,7 +1,8 @@
+import os
+import glob
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox #library for message
-from tkinter import Menu
 # from tkinter.ttk import Progressbar
 from pydub import AudioSegment
 
@@ -40,13 +41,13 @@ class Aplication():
 		self.tab_control.add(self.tab1, text=' VIDEOS ')
 
 		#mp4 a mp3
-		self.labl2 = Label(self.tab1, text='Convertir de MP4 a MP3',bg='#2d2d2d',fg='#fff',font=("Arial",14) )
+		self.labl2 = Label(self.tab1, text='Convertir de MP4 o FLV, a MP3',bg='#2d2d2d',fg='#fff',font=("Arial",14) )
 		self.text2 = Entry(self.tab1, textvariable=self.mp4_3, width=80, bg='beige')
-		self.button_2 = Button(self.tab1, text='Convertir', width=10, height=1, command=self.mp4_mp3)
+		self.button_2 = Button(self.tab1, text='Convertir', width=10, height=1, command=self.video_mp3)
 
 		#mp4 a flv
 		self.labl3 = Label(self.tab1, text='Convertir de MP4 a FLV',bg='#2d2d2d',fg='#fff',font=("Arial",14) )
-		self.text3 = Entry(self.tab1, textvariable=self.mp4_3, width=80, bg='beige')
+		self.text3 = Entry(self.tab1, textvariable=self.mp4_f, width=80, bg='beige')
 		self.button3 = Button(self.tab1, text='Convertir', width=10, height=1, command=self.mp4_flv)
 
 		#====================== box AUDIO ==================================
@@ -104,17 +105,20 @@ class Aplication():
 
 
 #========================= VIDEOS =======================================
-	def mp4_mp3(self):
+	def video_mp3(self):
 		url=self.mp4_3.get()
-		video = AudioSegment.from_file(url, 'mp4')
-		video.export('./'+url+'.mp3', format='mp3')
+		extension_list = ('*.mp4', '*.flv')
+
+		for extension in extension_list:
+			mp3_filename = os.path.splitext(url)[0] + '.mp3'
+			AudioSegment.from_file(url).export(mp3_filename, format='mp3')
 		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
 
-	def mp4_wav(self):
-		url=self.mp4_w.get()
-		video = AudioSegment.from_file(url, 'mp4')
-		video.export('./'+url+'.wav', format='wav')
-		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
+	# def mp4_wav(self):
+	# 	url=self.mp4_w.get()
+	# 	video = AudioSegment.from_file(url, 'mp4')
+	# 	video.export('./'+url+'.wav', format='wav')
+	# 	messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
 
 	def mp4_flv(self):
 		url=self.mp4_f.get()
@@ -127,13 +131,6 @@ class Aplication():
 		video = AudioSegment.from_file(url, 'flv')
 		video.export('./'+url+'.mp4', format='mp4')
 		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
-
-	def flv_mp3(self):
-		url=self.flv_3.get()
-		video = AudioSegment.from_file(url, 'flv')
-		video.export('./'+url+'.mp3', format='mp3')
-		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
-	
 
 
 
