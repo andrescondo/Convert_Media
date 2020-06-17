@@ -27,8 +27,10 @@ class Aplication():
 		self.mp4_3 = StringVar(value='.extensión')
 		self.mp4_w = StringVar(value='.extensión')
 		self.mp4_f = StringVar(value='.extensión')
-		self.flv_3 = StringVar(value='.extensión')
 		self.flv_4 = StringVar(value='.extensión')
+		self.mp3_w = StringVar(value='.extensión')
+		self.mp3_o = StringVar(value='.extensión')
+
 
 		#create label and entry
 		self.etiq1=Label(self.window,text='Ingrese el nombre del archivo, o la ruta donde se encuentra',bg='#2d2d2d',fg='#fff',font=("Arial",16))
@@ -46,9 +48,9 @@ class Aplication():
 		self.button_2 = Button(self.tab1, text='Convertir', width=10, height=1, command=self.video_mp3)
 
 		#mp4 a flv
-		self.labl3 = Label(self.tab1, text='Convertir de MP4 a FLV',bg='#2d2d2d',fg='#fff',font=("Arial",14) )
-		self.text3 = Entry(self.tab1, textvariable=self.mp4_f, width=80, bg='beige')
-		self.button3 = Button(self.tab1, text='Convertir', width=10, height=1, command=self.mp4_flv)
+		self.labl3 = Label(self.tab1, text='Convertir de MP3 a OGG',bg='#2d2d2d',fg='#fff',font=("Arial",14) )
+		self.text3 = Entry(self.tab1, textvariable=self.mp3_o, width=80, bg='beige')
+		self.button3 = Button(self.tab1, text='Convertir', width=10, height=1, command=self.mp3_ogg)
 
 		#====================== box AUDIO ==================================
 		self.tab2 = ttk.Frame(self.tab_control)
@@ -88,37 +90,31 @@ class Aplication():
 	def ogg_mp3(self):
 		url = self.ogg_3.get()
 		song = AudioSegment.from_ogg(url)
-		song.export('./'+url+'.mp3', format='.mp3')
+		song.export('./'+url+'.mp3', format='mp3')
 		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
 
 	def mp3_wav(self):
 		url = self.mp3_w.get()
 		song = AudioSegment.from_wav(url)
-		song.export('./'+url+'.wav', format='.wav')
+		song.export('./'+url+'.wav', format='wav')
 		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
 
 	def wav_mp3(self):
 		url = self.wav_3.get()
-		song = AudioSegment.from_mp3(url)
-		song.export('./'+url+'.mp3', format='.mp3')
+		song = AudioSegment.from_file(url)
+		song.export('./'+url+'.mp3', format='mp3')
 		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
 
 
 #========================= VIDEOS =======================================
 	def video_mp3(self):
 		url=self.mp4_3.get()
-		extension_list = ('*.mp4', '*.flv')
+		extension_list = ('*.mp4', '*.flv','*.wav','*.ogg')
 
 		for extension in extension_list:
 			mp3_filename = os.path.splitext(url)[0] + '.mp3'
 			AudioSegment.from_file(url).export(mp3_filename, format='mp3')
 		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
-
-	# def mp4_wav(self):
-	# 	url=self.mp4_w.get()
-	# 	video = AudioSegment.from_file(url, 'mp4')
-	# 	video.export('./'+url+'.wav', format='wav')
-	# 	messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
 
 	def mp4_flv(self):
 		url=self.mp4_f.get()
