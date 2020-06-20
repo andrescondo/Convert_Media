@@ -77,6 +77,7 @@ pwd
 Con esto podrá ver la ruta donde se encuentra en ese momento
 
 
-## Este proyecto esta bajo la licencia (MIT) - mira el archivo [LICENSE.md](LICENSE.md) para mas detalles
+## Este proyecto esta bajo la licencia (MIT) 
+### mira el archivo [LICENSE](LICENSE) para mas detalles
 
 
