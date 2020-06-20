@@ -8,7 +8,8 @@ from pydub import AudioSegment
 class Aplication():
 	def __init__(self):
 		self.window = Tk()
-		self.window.geometry('650x600')
+		self.window.geometry('650x410')
+		self.window.resizable(width=0, height=0)
 		self.window.title('Convertidor de archivos')
 		self.window.configure(bg='#2d2d2d')#, cursor='heart'		
 
@@ -35,13 +36,8 @@ class Aplication():
 		self.text1_1 = Entry(self.tab1, textvariable=self.video_3, width=80, bg='beige')
 		self.button1_1 = Button(self.tab1, text='Convertir', width=10, height=1, command=self.video_mp3)
 
-		self.labl1_2 = Label(self.tab1, text='Convertir de MP4 a FLV',bg='#2d2d2d',fg='#fff',font=("Arial,Bold",14) )
-		self.text1_2 = Entry(self.tab1, textvariable=self.mp4_f, width=80, bg='beige')
-		self.button1_2 = Button(self.tab1, text='Convertir', width=10, height=1, command=self.mp4_flv)
+		# Nota: Estoy retirando los convertidores de videos porque la libreria pydub funciona para la manipulacion de audio y no de video
 
-		self.labl1_3 = Label(self.tab1, text='Convertir de FLV a MP4',bg='#2d2d2d',fg='#fff',font=("Arial,Bold",14) )
-		self.text1_3 = Entry(self.tab1, textvariable=self.flv_4, width=80, bg='beige')
-		self.button1_3 = Button(self.tab1, text='Convertir', width=10, height=1, command=self.flv_mp4)
 
 		#====================== box AUDIO ==================================
 		self.tab2 = ttk.Frame(self.tab_control)
@@ -70,23 +66,15 @@ class Aplication():
 		self.labl1_1.pack(pady=10)
 		self.text1_1.pack(pady=10)
 		self.button1_1.pack(pady=10)
-		#--------
-		self.labl1_2.pack(pady=10)
-		self.text1_2.pack(pady=10)
-		self.button1_2.pack(pady=10)
-		#--------
-		self.labl1_3.pack(pady=10)
-		self.text1_3.pack(pady=10)
-		self.button1_3.pack(pady=10)
 
 		#=== 2_# AUDIO
 		self.labl2_1.pack(pady=10)
 		self.text2_1.pack(pady=10)
 		self.button2_1.pack(pady=10)
 
-		self.labl2_2.pack(pady=10)
-		self.text2_2.pack(pady=10)
-		self.button2_2.pack(pady=10)
+		# self.labl2_2.pack(pady=10)
+		# self.text2_2.pack(pady=10)
+		# self.button2_2.pack(pady=10)
 
 		self.labl2_3.pack(pady=10)
 		self.text2_3.pack(pady=10)
