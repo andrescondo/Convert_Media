@@ -10,6 +10,8 @@ Se necesita que en el computador tenga **Python** en la version 3.x [Descarga Py
 Deberas instalar **ffmpeg** lo podrás hacer desde el siguiente enlace
 [Descarga ffmpeg](https://ffmpeg.org/download.html)
 
+Aunque este en su mayoría es opcional para dicho sistema operativo
+
 #### Si usas Linux
 Te recomiendo que verifiques que en tu computador tengas instaladas las siguientes líbrerias
 
