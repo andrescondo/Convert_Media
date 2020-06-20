@@ -5,9 +5,6 @@ from tkinter import ttk
 from tkinter import messagebox #library for message
 from pydub import AudioSegment
 
-# Si estas revisando los commit que sepas que esto es nuevo para mi, es la primera vez que hago un proyecto asi
-# espero que te guste el programa y le saques provecho
-
 class Aplication():
 	def __init__(self):
 		self.window = Tk()
@@ -106,7 +103,7 @@ class Aplication():
 	def mp3_ogg(self):
 		url = self.mp3_o.get()
 		ogg_filename = os.path.splitext(url)[0] + '.ogg'
-		AudioSegment.from_file(url).export(ogg_filename, format='ogg')
+		AudioSegment.from_ogg(url).export(ogg_filename, format='ogg')
 		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
 
 	def audio_mp3(self):
@@ -120,7 +117,7 @@ class Aplication():
 	def mp3_wav(self):
 		url = self.mp3_w.get()
 		wav_filename = os.path.splitext(url)[0] + '.wav'
-		AudioSegment.from_file(url).export(wav_filename, format='wav')
+		AudioSegment.from_wav(url).export(wav_filename, format='wav')
 		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
 
 
@@ -137,7 +134,7 @@ class Aplication():
 	def mp4_flv(self):
 		url=self.mp4_f.get()
 		flv_filename = os.path.splitext(url)[0] + '.flv'
-		AudioSegment.from_file(url).export(flv_filename, format='flv')
+		AudioSegment.from_flv(url).export(flv_filename, format='flv')
 		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
 
 	def flv_mp4(self):
