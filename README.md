@@ -5,10 +5,15 @@ _Convertidor de formatos multimedia con un interfaz amigable para el usuario_
 ### Pre-requisitos 📋
 Se necesita que en el computador tenga **Python** en la version 3.x [Descarga Python3.x](https://www.python.org/downloads/)
 
+#### Si usas Windows
+
+Deberas instalar **ffmpeg** lo podrás hacer desde el siguiente enlace
+[Descarga ffmpeg](https://ffmpeg.org/download.html)
+
 #### Si usas Linux
 Te recomiendo que verifiques que en tu computador tengas instaladas las siguientes líbrerias
 
-y te sale un error donde se te indica que falta un decodificador h.264
+Si te sale un error donde se te indica que falta un decodificador h.264
 instala con el siguiente comando
 ```
 sudo apt-get install h264enc 
@@ -25,9 +30,17 @@ Instalar por pip
 ```
  pip install Avpy
 ```
+
+Y instalar la libreria Pydub
+```
+pip install pydub
+```
+
 para permitir la conversion a mp3
 
 NOTA: El comando apt y apt-get son si usas una distribución de Debian o Ubuntu, este puede variar dependiendo la distribución que uses
+
+
 
 ### Instalación 🔧
 
@@ -44,7 +57,6 @@ El programa permite convertir formatos multimedias como lo son:
 ```
 **Video**
 .mp4
-.flv
 
 **Audio**
 .mp3

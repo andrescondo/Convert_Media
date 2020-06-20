@@ -11,7 +11,8 @@ class Aplication():
 		self.window.geometry('650x410')
 		self.window.resizable(width=0, height=0)
 		self.window.title('Convertidor de archivos')
-		self.window.configure(bg='#2d2d2d')#, cursor='heart'		
+		#self.window.configure(bg='#2d2d2d')#, cursor='heart'		
+		self.window['bg'] = '#2d2d2d'
 
 		#var
 		self.video_3 = StringVar(value='NOMBRE.extensión')
@@ -36,7 +37,6 @@ class Aplication():
 		self.text1_1 = Entry(self.tab1, textvariable=self.video_3, width=80, bg='beige')
 		self.button1_1 = Button(self.tab1, text='Convertir', width=10, height=1, command=self.video_mp3)
 
-		# Nota: Estoy retirando los convertidores de videos porque la libreria pydub funciona para la manipulacion de audio y no de video
 
 
 		#====================== box AUDIO ==================================
