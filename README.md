@@ -48,7 +48,7 @@ NOTA: El comando apt y apt-get son si usas una distribución de Debian o Ubuntu,
 
 Puedes clonar el repositorio con el comando 
 ```
-git clone **El nombre del repositorio**
+git clone 
 ```
 o Descargarlo como un archivo .ZIP 
 
