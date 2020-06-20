@@ -120,18 +120,6 @@ class Aplication():
 			AudioSegment.from_file(url).export(mp3_filename, format='mp3')
 		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
 
-	def mp4_flv(self):
-		url=self.mp4_f.get()
-		flv_filename = os.path.splitext(url)[0] + '.flv'
-		AudioSegment.from_file(url, 'flv').export(flv_filename, format='flv')
-		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
-
-	def flv_mp4(self):
-		url=self.flv_4.get()
-		mp4_filename = os.path.splitext(url)[0] + '.mp4'
-		AudioSegment.from_file(url).export(mp4_filename, format='mp4')
-		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
-
 
 
 def main():
