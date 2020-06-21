@@ -48,7 +48,7 @@ NOTA: El comando apt y apt-get son si usas una distribución de Debian o Ubuntu,
 
 Puedes clonar el repositorio con el comando 
 ```
-git clone 
+git clone **El nombre del repositorio**
 ```
 o Descargarlo como un archivo .ZIP 
 
@@ -57,13 +57,13 @@ o Descargarlo como un archivo .ZIP
 #### Formatos
 El programa permite convertir formatos multimedias como lo son:
 ```
-**Video**
-.mp4
+Video
+- .mp4
 
-**Audio**
-.mp3
-.ogg
-.wav
+Audio
+- .mp3
+- .ogg
+- .wav
 ```
 #### Modo de Uso
 El programa funciona ingresando el nombre completo del archivo con la extension incluida, se recomienda tener el archivo en la misma carpeta donde se encuentra el programa, pero en caso de no estarlo habrá que ingresar la ruta del archivo. y este se generara la conversión en dicha carpeta.
@@ -77,6 +77,6 @@ pwd
 Con esto podrá ver la ruta donde se encuentra en ese momento
 
 
-## Este proyecto esta bajo la licencia (MIT) - mira el archivo [LICENSE.md](LICENSE.md) para mas detalles
+## Este proyecto esta bajo la licencia (MIT) - mira el archivo [LICENSE.md](LICENSE) para mas detalles
 
 
