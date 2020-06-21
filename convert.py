@@ -21,6 +21,8 @@ class Aplication():
 		self.audio_3 = StringVar(value='NOMBRE.extensión')
 		self.mp3_o = StringVar(value='NOMBRE.extensión')
 		self.mp3_w = StringVar(value='NOMBRE.extensión')
+		self.edit = StringVar(value='NOMBRE.extensión')
+		self.seg_record = DoubleVar(value=10)
 
 
 		#create label and entry
@@ -51,6 +53,19 @@ class Aplication():
 		self.text2_3 = Entry(self.tab2, textvariable=self.mp3_w, width=80, bg='beige')
 		self.button2_3 = Button(self.tab2, text='Convertir', width=10, height=1, command=self.mp3_wav)
 
+		#====================== Edition ====================================
+		self.tab3 = ttk.Frame(self.tab_control)
+		self.tab_control.add(self.tab3, text=' EDICIÓN ')
+		self.labl3_1 = Label(self.tab3, text='Ingrese el Audio que desea recortar',bg='#2d2d2d',fg='#fff',font=("Arial,Bold",14) )
+		self.text3_2 = Entry(self.tab3, textvariable=self.edit, width=80, bg='beige')
+		self.labl3_3 = Label(self.tab3, text='Ingrese cuantos segundos desea recortar',bg='#2d2d2d',fg='#fff',font=("Arial,Bold",10))
+		self.text3_4 = Entry(self.tab3, textvariable=self.seg_record, width=10, bg='beige')
+		self.clase1 = ttk.Radiobutton(self.tab3, text='Inicio', value='i')
+		self.clase2 = ttk.Radiobutton(self.tab3, text='Final', value='f')
+
+
+
+
 		#bottom exit
 		self.button_exit = ttk.Button(self.window, text='Salir', command=self.window.destroy)
 
@@ -71,6 +86,15 @@ class Aplication():
 		self.labl2_3.pack(pady=10)
 		self.text2_3.pack(pady=10)
 		self.button2_3.pack(pady=10)
+
+		#=== 3_# EDICION
+		self.labl3_1.pack(side=TOP, pady=10, padx=15, anchor="nw")
+		self.text3_2.pack( pady=10, padx=15, anchor="nw")
+		self.labl3_3.pack(side=TOP, pady=10, padx=15, anchor="nw")
+		self.text3_4.pack(side=LEFT, pady=5, padx=15, anchor="nw")
+		self.clase1.pack(padx=5,pady=2,anchor="nw")
+		self.clase2.pack(side= LEFT,padx=5,pady=2,anchor="nw")
+
 		
 		self.button_exit.pack(side=BOTTOM,pady=10)
 		#self.lbl2.pack(pady=10)
