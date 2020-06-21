@@ -47,10 +47,6 @@ class Aplication():
 		self.text2_1 = Entry(self.tab2, textvariable=self.audio_3, width=80, bg='beige')
 		self.button2_1 = Button(self.tab2, text='Convertir', width=10, height=1, command=self.audio_mp3)
 
-		self.labl2_2 = Label(self.tab2, text='Convertir de MP3 a OGG',bg='#2d2d2d',fg='#fff',font=("Arial,Bold",14) )
-		self.text2_2 = Entry(self.tab2, textvariable=self.mp3_o, width=80, bg='beige')
-		self.button2_2 = Button(self.tab2, text='Convertir', width=10, height=1, command=self.mp3_ogg)
-
 		self.labl2_3 = Label(self.tab2, text='Convertir de MP3 a WAV',bg='#2d2d2d',fg='#fff',font=("Arial,Bold",14) )
 		self.text2_3 = Entry(self.tab2, textvariable=self.mp3_w, width=80, bg='beige')
 		self.button2_3 = Button(self.tab2, text='Convertir', width=10, height=1, command=self.mp3_wav)
@@ -71,10 +67,6 @@ class Aplication():
 		self.labl2_1.pack(pady=10)
 		self.text2_1.pack(pady=10)
 		self.button2_1.pack(pady=10)
-
-		# self.labl2_2.pack(pady=10)
-		# self.text2_2.pack(pady=10)
-		# self.button2_2.pack(pady=10)
 
 		self.labl2_3.pack(pady=10)
 		self.text2_3.pack(pady=10)
