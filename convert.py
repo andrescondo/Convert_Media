@@ -130,7 +130,7 @@ class Aplication():
 				mp3_filename = os.path.splitext(url)[0] + '.mp3'
 			AudioSegment.from_file(url).export(mp3_filename, format='mp3')
 		except FileNotFoundError:
-			messagebox.showinfo('Fallo', 'El archivo que pusiste no existe').pack()
+			messagebox.showinfo('Fallo', 'El archivo que pusiste no existe, o el nombre esta incorrecto').pack()
 			
 		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
 
@@ -140,7 +140,7 @@ class Aplication():
 			wav_filename = os.path.splitext(url)[0] + '.wav'
 			AudioSegment.from_file(url).export(wav_filename, format='wav')
 		except FileNotFoundError:
-			messagebox.showinfo('Fallo', 'El archivo que pusiste no existe').pack()
+			messagebox.showinfo('Fallo', 'El archivo que pusiste no existe, o el nombre esta incorrecto').pack()
 
 		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
 
@@ -154,8 +154,8 @@ class Aplication():
 				mp3_filename = os.path.splitext(url)[0] + '.mp3'
 				AudioSegment.from_file(url).export(mp3_filename, format='mp3')
 		except FileNotFoundError:
-			messagebox.showinfo('Fallo', 'El archivo que pusiste no existe').pack()
-			
+			messagebox.showinfo('Fallo', 'El archivo que pusiste no existe, o el nombre esta incorrecto').pack()
+
 		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
 
 
