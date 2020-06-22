@@ -113,34 +113,49 @@ class Aplication():
 
 #======================== AUDIO ============================================
 	def mp3_ogg(self):
-		url = self.mp3_o.get()
-		ogg_filename = os.path.splitext(url)[0] + '.ogg'
-		AudioSegment.from_file(url).export(ogg_filename, format='ogg')
+		try:
+			url = self.mp3_o.get()
+			ogg_filename = os.path.splitext(url)[0] + '.ogg'
+			AudioSegment.from_file(url).export(ogg_filename, format='ogg')
+		except FileNotFoundError:
+			messagebox.showinfo('Fallo', 'El archivo que pusiste no existe').pack()
+
 		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
 
 	def audio_mp3(self):
-		url = self.audio_3.get()
-		extension_list = ('*.wav','*.ogg')
-		for extension in extension_list:
-			mp3_filename = os.path.splitext(url)[0] + '.mp3'
+		try:
+			url = self.audio_3.get()
+			extension_list = ('*.wav','*.ogg')
+			for extension in extension_list:
+				mp3_filename = os.path.splitext(url)[0] + '.mp3'
 			AudioSegment.from_file(url).export(mp3_filename, format='mp3')
+		except FileNotFoundError:
+			messagebox.showinfo('Fallo', 'El archivo que pusiste no existe').pack()
+			
 		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
 
 	def mp3_wav(self):
-		url = self.mp3_w.get()
-		wav_filename = os.path.splitext(url)[0] + '.wav'
-		AudioSegment.from_file(url).export(wav_filename, format='wav')
+		try:
+			url = self.mp3_w.get()
+			wav_filename = os.path.splitext(url)[0] + '.wav'
+			AudioSegment.from_file(url).export(wav_filename, format='wav')
+		except FileNotFoundError:
+			messagebox.showinfo('Fallo', 'El archivo que pusiste no existe').pack()
+
 		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
 
 
 #========================= VIDEOS =======================================
 	def video_mp3(self):
-		url=self.video_3.get()
-		extension_list = ('*.mp4', '*.flv')
-
-		for extension in extension_list:
-			mp3_filename = os.path.splitext(url)[0] + '.mp3'
-			AudioSegment.from_file(url).export(mp3_filename, format='mp3')
+		try:
+			url=self.video_3.get()
+			extension_list = ('*.mp4', '*.flv')
+			for extension in extension_list:
+				mp3_filename = os.path.splitext(url)[0] + '.mp3'
+				AudioSegment.from_file(url).export(mp3_filename, format='mp3')
+		except FileNotFoundError:
+			messagebox.showinfo('Fallo', 'El archivo que pusiste no existe').pack()
+			
 		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
 
 
