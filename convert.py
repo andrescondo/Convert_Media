@@ -8,7 +8,7 @@ from pydub import AudioSegment
 class Aplication():
 	def __init__(self):
 		self.window = Tk()
-		self.window.geometry('650x410')
+		self.window.geometry('650x420')
 		self.window.resizable(width=0, height=0)
 		self.window.title('Convertidor de archivos')
 		#self.window.configure(bg='#2d2d2d')#, cursor='heart'		
@@ -23,6 +23,7 @@ class Aplication():
 		self.mp3_w = StringVar(value='NOMBRE.extensión')
 		self.edit = StringVar(value='NOMBRE.extensión')
 		self.seg_record = DoubleVar(value=10)
+		self.new_name = StringVar(value='Audio_Recortado.extensión')
 
 
 		#create label and entry
@@ -37,7 +38,7 @@ class Aplication():
 
 		self.labl1_1 = Label(self.tab1, text='Convertir de MP4 o FLV, a MP3',bg='#2d2d2d',fg='#fff',font=("Arial ,Bold",14) )
 		self.text1_1 = Entry(self.tab1, textvariable=self.video_3, width=80, bg='beige')
-		self.button1_1 = Button(self.tab1, text='Convertir', width=10, height=1, command=self.video_mp3)
+		self.button1_1 = Button(self.tab1, text='Convertir', width=10, height=1, bg='#A7A8A9',command=self.video_mp3)
 
 
 
@@ -47,21 +48,24 @@ class Aplication():
 		
 		self.labl2_1 = Label(self.tab2, text='Convertir de OGG o WAV a MP3',bg='#2d2d2d',fg='#fff',font=("Arial,Bold",14) )
 		self.text2_1 = Entry(self.tab2, textvariable=self.audio_3, width=80, bg='beige')
-		self.button2_1 = Button(self.tab2, text='Convertir', width=10, height=1, command=self.audio_mp3)
+		self.button2_1 = Button(self.tab2, text='Convertir', width=10, height=1,bg='#A7A8A9', command=self.audio_mp3)
 
 		self.labl2_3 = Label(self.tab2, text='Convertir de MP3 a WAV',bg='#2d2d2d',fg='#fff',font=("Arial,Bold",14) )
 		self.text2_3 = Entry(self.tab2, textvariable=self.mp3_w, width=80, bg='beige')
-		self.button2_3 = Button(self.tab2, text='Convertir', width=10, height=1, command=self.mp3_wav)
+		self.button2_3 = Button(self.tab2, text='Convertir', width=10, height=1,bg='#A7A8A9', command=self.mp3_wav)
 
 		#====================== Edition ====================================
 		self.tab3 = ttk.Frame(self.tab_control)
-		self.tab_control.add(self.tab3, text=' EDICIÓN ')
-		self.labl3_1 = Label(self.tab3, text='Ingrese el Audio que desea recortar',bg='#2d2d2d',fg='#fff',font=("Arial,Bold",14) )
+		self.tab_control.add(self.tab3, text=' RECORTAR ')
+		self.labl3_1 = Label(self.tab3, text='Ingrese el Audio que desea editar',bg='#2d2d2d',fg='#fff',font=("Arial,Bold",14) )
 		self.text3_2 = Entry(self.tab3, textvariable=self.edit, width=80, bg='beige')
 		self.labl3_3 = Label(self.tab3, text='Ingrese cuantos segundos desea recortar',bg='#2d2d2d',fg='#fff',font=("Arial,Bold",10))
 		self.text3_4 = Entry(self.tab3, textvariable=self.seg_record, width=10, bg='beige')
 		self.clase1 = ttk.Radiobutton(self.tab3, text='Inicio', value='i')
 		self.clase2 = ttk.Radiobutton(self.tab3, text='Final', value='f')
+		self.labl3_5 = Label(self.tab3, text='Ingrese nuevo nombre',bg='#2d2d2d',fg='#fff',font=("Arial,Bold",10))
+		self.text3_6 = Entry(self.tab3, textvariable=self.new_name, width=30, bg='beige')
+		self.button_edit = Button(self.tab3, width=10,text='Recortar',bg='#A7A8A9')
 
 
 
@@ -91,12 +95,15 @@ class Aplication():
 		self.labl3_1.pack(side=TOP, pady=10, padx=15, anchor="nw")
 		self.text3_2.pack( pady=10, padx=15, anchor="nw")
 		self.labl3_3.pack(side=TOP, pady=10, padx=15, anchor="nw")
-		self.text3_4.pack(side=LEFT, pady=5, padx=15, anchor="nw")
-		self.clase1.pack(padx=5,pady=2,anchor="nw")
-		self.clase2.pack(side= LEFT,padx=5,pady=2,anchor="nw")
+		self.text3_4.pack( pady=5, padx=15, anchor="nw")
+		self.clase1.pack(padx=50,pady=2,anchor="nw")
+		self.clase2.pack(padx=50,pady=2,anchor="nw")
+		self.labl3_5.pack(pady=5, padx=15,anchor="nw")
+		self.text3_6.pack(side=LEFT, pady=5, padx=50,anchor="nw")
+		self.button_edit.pack(side=BOTTOM,pady=5, padx=5, anchor="sw")
 
 		
-		self.button_exit.pack(side=BOTTOM,pady=10)
+		self.button_exit.pack(side=BOTTOM,pady=10, padx=15, anchor="se")
 		#self.lbl2.pack(pady=10)
 		self.tab_control.pack(expand=1, fill='both')
 
