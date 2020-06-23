@@ -62,8 +62,8 @@ class Aplication():
 		self.text3_2 = Entry(self.tab3, textvariable=self.edit, width=80, bg='beige')
 		self.labl3_3 = Label(self.tab3, text='Ingrese cuantos segundos desea recortar',bg='#2d2d2d',fg='#fff',font=("Arial,Bold",10))
 		self.text3_4 = Entry(self.tab3, textvariable=self.seg_record, width=10, bg='beige')
-		self.clase1 = ttk.Radiobutton(self.tab3, text='Inicio', value=self.clase)
-		self.clase2 = ttk.Radiobutton(self.tab3, text='Final', value=self.clase)
+		self.clase1 = ttk.Radiobutton(self.tab3, text='Inicio',variable=self.clase, value='i')
+		self.clase2 = ttk.Radiobutton(self.tab3, text='Final',variable=self.clase, value='f')
 		self.labl3_5 = Label(self.tab3, text='Ingrese nuevo nombre',bg='#2d2d2d',fg='#fff',font=("Arial,Bold",10))
 		self.text3_6 = Entry(self.tab3, textvariable=self.new_name, width=30, bg='beige')
 		self.button_edit = Button(self.tab3, width=10,text='Recortar' ,bg='#A7A8A9' , command=self.cut_audio)
@@ -160,24 +160,27 @@ class Aplication():
 		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
 
 #======================  =======================================
-	def cut_audio(self, edit, seg_record, new_name):
+	def cut_audio(self): #, edit, seg_record, new_name
 		error_dato = False
 		try:
 			url = self.edit.get()
 			seg = float(self.seg_record.get())
 			name = str(self.new_name.get())
 			time = seg * 1000
+			
 
-			if not error_dato:
-				sound = AudioSegment.from_file(url)
+			# if not error_dato:
+			sound = AudioSegment.from_file(url)
 
-				if self.clase.get() == 'i':
-					sound_cut = sound[:time]
+			if self.clase.get() == 'i':
+				sound_cut = sound[:time]
 
-				elif self.clase.get() == 'f':
-					sound_cut = sound[time:]
-
-
+			elif self.clase.get() == 'f':
+				sound_cut = sound[time:]
+			else:
+				print('fallo')
+		except:
+			print('fallo')
 
 
 
