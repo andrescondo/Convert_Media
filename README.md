@@ -124,9 +124,6 @@ pwd
 ```
 Con esto podrá ver la ruta donde se encuentra en ese momento
 
-### DEBUGGIN
-Ahora el programa al ingresar algún nombre incorrecto o la dirrecion incorrecta Este mandará un mensaje avisando al usuario de dicho error
-
 
 ## Este proyecto esta bajo la licencia (MIT) 
 ### mira el archivo [LICENSE](LICENSE) para mas detalles
