@@ -84,7 +84,7 @@ NOTA: El comando apt y apt-get son si usas una distribución de Debian o Ubuntu,
 
 Puedes clonar el repositorio con el comando 
 ```
-git clone **El nombre del repositorio**
+git clone https://github.com/andrescondo/Convert_Media.git
 ```
 o Descargarlo como un archivo .ZIP 
 
@@ -97,7 +97,7 @@ o
 ```
 python3 convert.py
 ```
-
+Esto depende en que sistema Operativo donde te encuentres, como tenga confidgurado Python en tu ordenador
 
 
 
@@ -107,6 +107,7 @@ El programa permite convertir formatos multimedias como lo son:
 ```
 Video
 - .mp4
+- .flv
 
 Audio
 - .mp3
@@ -114,6 +115,8 @@ Audio
 - .wav
 ```
 #### Modo de Uso
+
+###### En: VIDEO y AUDIO
 El programa funciona ingresando el nombre completo del archivo con la extension incluida, se recomienda tener el archivo en la misma carpeta donde se encuentra el programa, pero en caso de no estarlo habrá que ingresar la ruta del archivo. y este se generara la conversión en dicha carpeta.
 
 Si esta en Windows tiene que ir hasta la carpeta donde se encuentra el archivo, y copiar la que verá en la parte de arriba del explorador de archivos.
