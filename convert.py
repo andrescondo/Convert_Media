@@ -164,7 +164,7 @@ class Aplication():
 		error_dato = False
 		try:
 			url = self.edit.get()
-			seg = float(self.seg_record.get())
+			seg = self.seg_record.get()
 			name = str(self.new_name.get())
 			time = seg * 1000
 			
@@ -175,12 +175,23 @@ class Aplication():
 			if self.clase.get() == 'i':
 				sound_cut = sound[:time]
 
+				sound_cut.export(name, format='mp3')
+
 			elif self.clase.get() == 'f':
-				sound_cut = sound[time:]
+				sound_cut = sound[-time:]
 			else:
 				print('fallo')
-		except:
-			print('fallo')
+
+			#sound_cut = name
+
+			# extension_list = ('*.wav','*.ogg','*.mp3')
+			# for extension in extension_list:
+			# 	filename = os.path.splitext(sound_cut)[0]+ '_recortado' + '.mp3'
+			# AudioSegment.from_file(sound_cut).export(filename, format='mp3')
+
+
+		except FileNotFoundError:
+			messagebox.showinfo('Fallo', 'El archivo que pusiste no existe, o el nombre esta incorrecto').pack()
 
 
 
