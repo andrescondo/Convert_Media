@@ -1,6 +1,6 @@
-# Convertidor de multimedia :musical_score: :video_camera:
+# Manipulador de multimedia a, Audio :musical_score: :video_camera:
 
-_Convertidor de formatos multimedia con un interfaz amigable para el usuario_
+_Manipulador de formatos multimedia a audio con un interfaz amigable para el usuario_
 
 ### Pre-requisitos 📋
 Se necesita que en el computador tenga **Python** en la version 3.x [Descarga Python3.x](https://www.python.org/downloads/)
