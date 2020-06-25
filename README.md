@@ -128,8 +128,6 @@ Si esta en **Linux**, puede ingresar el siguiente comando
 pwd
 ```
 
-Los formatos soportados son los siguientes: _mp4, flv, ogg, mp3, wav_.
-
 
 ###### Edición
 
