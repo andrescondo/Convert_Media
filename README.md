@@ -1,6 +1,6 @@
-# Convertidor de multimedia :musical_score: :video_camera:
+# Manipulador de multimedia a, Audio :musical_score: :video_camera:
 
-_Convertidor de formatos multimedia con un interfaz amigable para el usuario_
+_Manipulador de formatos multimedia a audio con un interfaz amigable para el usuario_
 
 ### Pre-requisitos 📋
 Se necesita que en el computador tenga **Python** en la version 3.x [Descarga Python3.x](https://www.python.org/downloads/)
@@ -41,14 +41,15 @@ py convert.py
 **instalar ffmpeg** 
 
 [Descarga ffmpeg](https://ffmpeg.zeranoe.com/builds/)
-
 Nota: asegurarse de verificar la arquitectura del programa a descargar sea la misma de su ordenador (64x o 32x)
+
+más información de como instarlo en: [instalar ffmpeg](https://www.solvetic.com/tutoriales/article/7976-como-instalar-ffmpeg-en-windows-10/)
 
 Una vez ya instalado, en variables del entorno agregar el PATH para ffmpeg
 ```
 C:\FFmpeg\bin
 ```
-más información de como hacerlo [instalar ffmpeg](https://www.solvetic.com/tutoriales/article/7976-como-instalar-ffmpeg-en-windows-10/)
+
 
 En windows solo necesitas instalar el pydub y ffmpeg y podrás usar el programa
 
@@ -84,7 +85,7 @@ NOTA: El comando apt y apt-get son si usas una distribución de Debian o Ubuntu,
 
 Puedes clonar el repositorio con el comando 
 ```
-git clone **El nombre del repositorio**
+git clone https://github.com/andrescondo/Convert_Media.git
 ```
 o Descargarlo como un archivo .ZIP 
 
@@ -97,7 +98,7 @@ o
 ```
 python3 convert.py
 ```
-
+Esto depende en que sistema Operativo donde te encuentres, como tenga confidgurado Python en tu ordenador
 
 
 
@@ -107,6 +108,7 @@ El programa permite convertir formatos multimedias como lo son:
 ```
 Video
 - .mp4
+- .flv
 
 Audio
 - .mp3
@@ -114,18 +116,31 @@ Audio
 - .wav
 ```
 #### Modo de Uso
+
+###### Recortar
+
 El programa funciona ingresando el nombre completo del archivo con la extension incluida, se recomienda tener el archivo en la misma carpeta donde se encuentra el programa, pero en caso de no estarlo habrá que ingresar la ruta del archivo. y este se generara la conversión en dicha carpeta.
 
-Si esta en Windows tiene que ir hasta la carpeta donde se encuentra el archivo, y copiar la que verá en la parte de arriba del explorador de archivos.
+Si estas en **Windows** puedes dar click derecho sobre el archivo y bajar entre las opciones, y eleguir la que dice 'Copiar como ruta de acceso', y obtendás la dirección completa del archivo. Otra opción es ir a la parte de arriba del explorador y dar doble click, hay se mostrará la ruta donde se encuentra la carpeta, y por consiguiente, donde esta el archivo.
 
-Si esta en Linux, puede ingresar el siguiente comando
+Si esta en **Linux**, puede ingresar el siguiente comando
 ```
 pwd
 ```
-Con esto podrá ver la ruta donde se encuentra en ese momento
 
-### DEBUGGIN
-Ahora el programa al ingresar algún nombre incorrecto o la dirrecion incorrecta Este mandará un mensaje avisando al usuario de dicho error
+Los formatos soportados son los siguientes: _mp4, flv, ogg, mp3, wav_.
+
+
+###### Edición
+
+Al igual que con **Recortar**, para escoger el archivo se tiene que ingresar el nombre del archivo y la extensión, en caso de estar en la misma carpeta. Y en caso de estar en otra carpeta se tiene que ingresar ls ruta donde se encuentre el archivo, con el nombre y extensión del mismo.
+Este viene con la caracteristica que se puede a un video recortar, pero igual mente se guardará como un audio (formato: .mp3)
+
+Tambien hay que ingresar la cantdad en segundos que se desea recortar, en caso de que la cantidad sea mayor al tiempo del audio, este se guadará con el nuevo nombre y con el timepo del original.
+
+Se podrá escoger que parte del video se desea recortar: **inicio, o final**.
+
+Y en el último cuadro se podrá ingresar el nombre que se le dará al audio recortado, en caso de no poder nombre se guardará con el que esta por defecto, tener cuidado con esto, ya que el programa al guardar el archivo puede sobreescribirlo en caso de tener el mismo nombre.
 
 
 ## Este proyecto esta bajo la licencia (MIT) 
