@@ -23,6 +23,11 @@ class Aplication():
 		self.clase = StringVar(value='i')
 		self.seg_record = DoubleVar(value=10)
 		self.new_name = StringVar(value='Audio_Recortado')
+		self.join_1 = StringVar(value='NOMBRE.extensión')
+		self.join_2 = StringVar(value='NOMBRE.extensión')
+		self.join_new = StringVar(value='NOMBRE.extensión')
+
+
 		#self.img_url = PhotoImage(file='file.png')
 
 
@@ -66,11 +71,11 @@ class Aplication():
 		self.tab_control.add(self.tab3, text=' FUSIONAR ')
 		self.labl3_1 = Label(self.tab3, text='Suba los audios que desea unir', bg='#2d2d2d',fg='#fff',font=("Arial,Bold",14))
 		self.labl3_2 = Label(self.tab3, text='Primer audio', bg='#2d2d2d',fg='#fff',font=("Arial,Bold",10))
-		self.text3_3 = Entry(self.tab3, textvariable=self.edit,width=60, bg='beige')
+		self.text3_3 = Entry(self.tab3, textvariable=self.join_1,width=60, bg='beige')
 		self.labl3_4 = Label(self.tab3, text='Segundo audio', bg='#2d2d2d',fg='#fff',font=("Arial,Bold",10))
-		self.text3_5 = Entry(self.tab3, textvariable=self.edit,width=60, bg='beige')
+		self.text3_5 = Entry(self.tab3, textvariable=self.join_2,width=60, bg='beige')
 		self.labl3_6 = Label(self.tab3, text=' Ingrese el nombre del nuevo audio ', bg='#2d2d2d',fg='#fff',font=("Arial,Bold",10))
-		self.text3_7 = Entry(self.tab3, textvariable=self.edit,width=30, bg='beige')
+		self.text3_7 = Entry(self.tab3, textvariable=self.join_new,width=30, bg='beige')
 
 		self.button_join = Button(self.tab3, width=10,text='Fusionar' ,bg='#A7A8A9', command=self.join_audio)
 		#self.img = Button(self.tab3, image=self.img_url).pack()
@@ -169,15 +174,24 @@ class Aplication():
 			sound_cut.export(filename, format='mp3')
 			messagebox.showinfo('Listo', 'El archivo ya fue recortado').pack()
 
-
 		except FileNotFoundError:
 			messagebox.showinfo('Fallo', 'El archivo que pusiste no existe, o el nombre esta incorrecto').pack()
 
 
 #====================== JOIN =======================================
 	def join_audio(self):
-		print('aún en prueba')
+		try :
+			audio_1 = self.join_1.get()
+			audio_2 = self.join_2.get()
 
+			if audio_1 != self.join_1 && audio_2 != self.join_2: 
+				new_audio = audio_1 + audio_2
+				new_audio = str(new_audio)
+
+		except :
+			pass
+				
+					
 
 
 def main():
