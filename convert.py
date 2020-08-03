@@ -5,6 +5,7 @@ from tkinter import ttk
 from tkinter import messagebox #library for message
 from pydub import AudioSegment
 from tkinter import filedialog
+from PIL import Image
 
 class Aplication():
 	def __init__(self):
@@ -22,6 +23,9 @@ class Aplication():
 		self.clase = StringVar(value='i')
 		self.seg_record = DoubleVar(value=10)
 		self.new_name = StringVar(value='Audio_Recortado')
+		#self.img_url = PhotoImage(file='file.png')
+
+
 
 
 		#create label and entry
@@ -59,9 +63,20 @@ class Aplication():
 
 		#====================== Unir ====================================
 		self.tab3 = ttk.Frame(self.tab_control)
-		self.tab_control.add(self.tab3, text=' FUCIONAR ')
-		self.labl3_1 = Label(self.tab3, text='Suba los audios que desea unir', bg='#2d2d2d',fg='#fff',font=("Arial,Bold",14)).pack()
+		self.tab_control.add(self.tab3, text=' FUSIONAR ')
+		self.labl3_1 = Label(self.tab3, text='Suba los audios que desea unir', bg='#2d2d2d',fg='#fff',font=("Arial,Bold",14))
+		self.labl3_2 = Label(self.tab3, text='Primer audio', bg='#2d2d2d',fg='#fff',font=("Arial,Bold",10))
+		self.text3_3 = Entry(self.tab3, textvariable=self.edit,width=60, bg='beige')
+		self.labl3_4 = Label(self.tab3, text='Segundo audio', bg='#2d2d2d',fg='#fff',font=("Arial,Bold",10))
+		self.text3_5 = Entry(self.tab3, textvariable=self.edit,width=60, bg='beige')
+		self.labl3_6 = Label(self.tab3, text=' Ingrese el nombre del nuevo audio ', bg='#2d2d2d',fg='#fff',font=("Arial,Bold",10))
+		self.text3_7 = Entry(self.tab3, textvariable=self.edit,width=30, bg='beige')
 
+		self.button_join = Button(self.tab3, width=10,text='Fusionar' ,bg='#A7A8A9', command=self.join_audio)
+		#self.img = Button(self.tab3, image=self.img_url).pack()
+
+
+		#self.file3_1
 		#bottom exit
 		self.button_exit = ttk.Button(self.window, text='Salir', command=self.window.destroy)
 
@@ -91,6 +106,16 @@ class Aplication():
 		self.labl2_5.pack(pady=5, padx=15,anchor="nw")
 		self.text2_6.pack(side=LEFT, pady=5, padx=50,anchor="nw")
 		self.button_edit.pack(side=BOTTOM,pady=5, padx=5, anchor="sw")
+
+		#==== 3_# JOIN
+		self.labl3_1.pack(padx= 10, pady=15, anchor="nw")
+		self.labl3_2.pack(padx=15 , pady=5, anchor="nw")
+		self.text3_3.pack(padx=15 , pady=5, anchor="nw")
+		self.labl3_4.pack(padx=15 , pady=5, anchor="nw")
+		self.text3_5.pack(padx=15 , pady=5, anchor="nw")
+		self.labl3_6.pack(padx=15 , pady=5, anchor="nw")
+		self.text3_7.pack(padx=15 , pady=5, anchor="nw")
+		self.button_join.pack()
 
 		
 		self.button_exit.pack(side=BOTTOM,pady=10, padx=15, anchor="se")
@@ -148,6 +173,10 @@ class Aplication():
 		except FileNotFoundError:
 			messagebox.showinfo('Fallo', 'El archivo que pusiste no existe, o el nombre esta incorrecto').pack()
 
+
+#====================== JOIN =======================================
+	def join_audio(self):
+		print('aún en prueba')
 
 
 
