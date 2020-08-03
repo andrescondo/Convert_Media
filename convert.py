@@ -4,6 +4,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox #library for message
 from pydub import AudioSegment
+from tkinter import filedialog
 
 class Aplication():
 	def __init__(self):
@@ -56,8 +57,10 @@ class Aplication():
 		self.text2_6 = Entry(self.tab2, textvariable=self.new_name, width=30, bg='beige')
 		self.button_edit = Button(self.tab2, width=10,text='Recortar' ,bg='#A7A8A9' , command=self.cut_audio)
 
-
-
+		#====================== Unir ====================================
+		self.tab3 = ttk.Frame(self.tab_control)
+		self.tab_control.add(self.tab3, text=' FUCIONAR ')
+		self.labl3_1 = Label(self.tab3, text='Suba los audios que desea unir', bg='#2d2d2d',fg='#fff',font=("Arial,Bold",14)).pack()
 
 		#bottom exit
 		self.button_exit = ttk.Button(self.window, text='Salir', command=self.window.destroy)
@@ -126,10 +129,7 @@ class Aplication():
 			url = self.edit.get()
 			seg = self.seg_record.get()
 			name = str(self.new_name.get())
-			
-			time = seg * 1000
-			
-
+			time = (seg * 1000) + 1
 			sound = AudioSegment.from_file(url)
 
 			if self.clase.get() == 'i':
@@ -137,12 +137,9 @@ class Aplication():
 
 			elif self.clase.get() == 'f':
 				sound_cut = sound[-time:]
-
 			else:
 				print('fallo')
 		
-
-
 			filename = os.path.splitext(name)[0]+ '.mp3'
 			sound_cut.export(filename, format='mp3')
 			messagebox.showinfo('Listo', 'El archivo ya fue recortado').pack()
