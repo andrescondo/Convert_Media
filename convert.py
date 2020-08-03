@@ -182,14 +182,22 @@ class Aplication():
 	def join_audio(self):
 		try :
 			audio_1 = self.join_1.get()
+			audio_1 = AudioSegment.from_file(audio_1)
 			audio_2 = self.join_2.get()
+			audio_2 = AudioSegment.from_file(audio_2)
+			join_n = str(self.join_new.get())
 
-			if audio_1 != self.join_1 && audio_2 != self.join_2: 
+			if audio_1 != self.join_1 and audio_2 != self.join_2: 
 				new_audio = audio_1 + audio_2
-				new_audio = str(new_audio)
+			else:
+				messagebox.showinfo('Alto', 'Se deben ingresar dos audios').pack()
 
-		except :
-			pass
+			filename = os.path.splitext(join_n)[0] + '.mp3'
+			new_audio.export(filename, format='mp3')
+			messagebox.showinfo('Listo', 'Se creo el nuevo audio').pack()
+
+		except FileNotFoundError:
+			messagebox.showinfo('Fallo', 'El archivo que pusiste no existe, o el nombre esta incorrecto').pack()
 				
 					
 
