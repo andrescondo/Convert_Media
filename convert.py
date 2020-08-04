@@ -154,6 +154,7 @@ class Aplication():
 			 	O el nombre esta incorrecto''').pack()
 
 		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
+		
 
 #====================== Cut =======================================
 	def cut_audio(self):
