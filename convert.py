@@ -4,8 +4,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox #library for message
 from pydub import AudioSegment
-from tkinter import filedialog
-from PIL import Image
+#from tkinter import filedialog
 
 class Aplication():
 	def __init__(self):
@@ -22,19 +21,21 @@ class Aplication():
 		self.edit = StringVar(value='NOMBRE.extensión')
 		self.clase = StringVar(value='i')
 		self.seg_record = DoubleVar(value=10)
-		self.new_name = StringVar(value='Audio_Recortado')
+		self.new_name = StringVar(value='Nuevo Nombre')
 		self.join_1 = StringVar(value='NOMBRE.extensión')
 		self.join_2 = StringVar(value='NOMBRE.extensión')
-		self.join_new = StringVar(value='NOMBRE.extensión')
+		self.join_new = StringVar(value='Nuevo Nombre')
 
 
-		#self.img_url = PhotoImage(file='file.png')
+			# self.img_url = PhotoImage(file='info.png')
 
 
 
 
 		#create label and entry
 		self.etiq1=Label(self.window,text='NOMBRE DEL ARCHIVO, O LA RUTA DONDE SE ENCUENTRA',bg='#2d2d2d',fg='#fff',font=("Arial,Bold",15))
+		
+		
 		# color celeste #b5deda  
 		#==================
 		self.tab_control = ttk.Notebook(self.window)
@@ -81,9 +82,9 @@ class Aplication():
 		#self.img = Button(self.tab3, image=self.img_url).pack()
 
 
-		#self.file3_1
-		#bottom exit
-		self.button_exit = ttk.Button(self.window, text='Salir', command=self.window.destroy)
+		#Footer
+		self.footer=Label(self.window,text='Autor: Andres Condo    Redes sociales: @andreescondo',bg='#2d2d2d',fg='#fff',font=("Arial,Bold",11))
+
 
 		#====.pack()=====================================  
 		#Nota: sin el .pack() los elementos no serán visibles
@@ -116,15 +117,14 @@ class Aplication():
 		self.labl3_1.pack(padx= 10, pady=15, anchor="nw")
 		self.labl3_2.pack(padx=15 , pady=5, anchor="nw")
 		self.text3_3.pack(padx=15 , pady=5, anchor="nw")
-		self.labl3_4.pack(padx=15 , pady=5, anchor="nw")
+		self.labl3_4.pack(padx=15 , pady=10, anchor="nw")
 		self.text3_5.pack(padx=15 , pady=5, anchor="nw")
-		self.labl3_6.pack(padx=15 , pady=5, anchor="nw")
+		self.labl3_6.pack(padx=15 , pady=10, anchor="nw")
 		self.text3_7.pack(padx=15 , pady=5, anchor="nw")
 		self.button_join.pack()
 
-		
-		self.button_exit.pack(side=BOTTOM,pady=10, padx=15, anchor="se")
-		#self.lbl2.pack(pady=10)
+		self.footer.pack(side=BOTTOM,pady=10, padx=15, anchor="se")
+
 		self.tab_control.pack(expand=1, fill='both')
 
 
@@ -139,7 +139,8 @@ class Aplication():
 				mp3_filename = os.path.splitext(url)[0] + '.mp3'
 			AudioSegment.from_file(url).export(mp3_filename, format='mp3')
 		except FileNotFoundError:
-			messagebox.showinfo('Fallo', 'El archivo que pusiste no existe, o el nombre esta incorrecto').pack()
+			messagebox.showinfo('Fallo', '''El archivo que pusiste no existe
+			 	O el nombre esta incorrecto''').pack()
 			
 		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
 
@@ -149,7 +150,8 @@ class Aplication():
 			wav_filename = os.path.splitext(url)[0] + '.wav'
 			AudioSegment.from_file(url).export(wav_filename, format='wav')
 		except FileNotFoundError:
-			messagebox.showinfo('Fallo', 'El archivo que pusiste no existe, o el nombre esta incorrecto').pack()
+			messagebox.showinfo('Fallo', '''El archivo que pusiste no existe
+			 	O el nombre esta incorrecto''').pack()
 
 		messagebox.showinfo('Listo', 'El archivo ya esta convertido').pack()
 
@@ -175,8 +177,8 @@ class Aplication():
 			messagebox.showinfo('Listo', 'El archivo ya fue recortado').pack()
 
 		except FileNotFoundError:
-			messagebox.showinfo('Fallo', 'El archivo que pusiste no existe, o el nombre esta incorrecto').pack()
-
+			messagebox.showinfo('Fallo', '''El archivo que pusiste no existe
+			 	O el nombre esta incorrecto''').pack()
 
 #====================== JOIN =======================================
 	def join_audio(self):
@@ -189,17 +191,14 @@ class Aplication():
 
 			if audio_1 != self.join_1 and audio_2 != self.join_2: 
 				new_audio = audio_1 + audio_2
-			else:
-				messagebox.showinfo('Alto', 'Se deben ingresar dos audios').pack()
 
 			filename = os.path.splitext(join_n)[0] + '.mp3'
 			new_audio.export(filename, format='mp3')
 			messagebox.showinfo('Listo', 'Se creo el nuevo audio').pack()
 
 		except FileNotFoundError:
-			messagebox.showinfo('Fallo', 'El archivo que pusiste no existe, o el nombre esta incorrecto').pack()
-				
-					
+			messagebox.showinfo('Fallo', '''El archivo que pusiste no existe
+			 	O el nombre esta incorrecto''').pack()		
 
 
 def main():
