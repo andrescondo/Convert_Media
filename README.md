@@ -117,7 +117,7 @@ Audio
 ```
 #### Modo de Uso
 
-###### Recortar
+##### Recortar
 
 El programa funciona ingresando el nombre completo del archivo con la extension incluida, se recomienda tener el archivo en la misma carpeta donde se encuentra el programa, pero en caso de no estarlo habrá que ingresar la ruta del archivo. y este se generara la conversión en dicha carpeta.
 
@@ -129,7 +129,7 @@ pwd
 ```
 
 
-###### Edición
+##### Edición
 
 Al igual que con **Recortar**, para escoger el archivo se tiene que ingresar el nombre del archivo y la extensión, en caso de estar en la misma carpeta. Y en caso de estar en otra carpeta se tiene que ingresar ls ruta donde se encuentre el archivo, con el nombre y extensión del mismo.
 Este viene con la caracteristica que se puede a un video recortar, pero igual mente se guardará como un audio (formato: .mp3)
@@ -139,6 +139,23 @@ Tambien hay que ingresar la cantdad en segundos que se desea recortar, en caso d
 Se podrá escoger que parte del video se desea recortar: **inicio, o final**.
 
 Y en el último cuadro se podrá ingresar el nombre que se le dará al audio recortado, en caso de no poder nombre se guardará con el que esta por defecto, tener cuidado con esto, ya que el programa al guardar el archivo puede sobreescribirlo en caso de tener el mismo nombre.
+
+##### Fusionar
+
+Ahora el programa tiene un nuevo apartado en el que desde el se podrá unir dos diferentes músicas, solo ingresando los nombres y las respectivas extensiones, y con el ingreso de un nuevo nombre se tendrá un nueva música.
+
+
+### Ejecutable
+
+El programa ahora cuenta con un ejecutable en Linux (Probado por el momento en ZorinOS), este se encuentra en un archivo comprimido **Ejecutable.zip**, y accediendo a la carpeta *Ejecutable linux*, y solo hay que darle doble click y se ejecutara el programa.
+
+Para el Sistema operativo Windows, este se ejecuta así mismo ingresando a la carpeta comprimida **Ejecutable.zip**, y accediendo a la carpeta *Ejecutable Windows*, la única diferencia notoría sería el tiempo de ejecución, una vez dado el doble click se deberá esperar unos segundos para que el pograma comience a andar. 
+
+
+### Recomendación
+
+Suguiero que se descomprima el ejecutable para el SO correspondiente, y se posicione el ejecutable en el directorio donde se encuentren los archivos que se deseé manipular, de esta manera solo se tendrá que ingresar el nombre del archivo con su extensión.
+
 
 
 ## Este proyecto esta bajo la licencia (MIT) 
