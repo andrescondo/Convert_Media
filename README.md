@@ -147,7 +147,7 @@ Ahora el programa tiene un nuevo apartado en el que desde el se podrá unir dos 
 
 ### Ejecutable
 
-Enlace a [Mega](https://url2.cl/Gc1sw)
+Enlace a [Mega](https://url2.cl/9Fv12)
 
 El programa ahora cuenta con un ejecutable en Linux (Probado por el momento en ZorinOS), este se encuentra en un archivo comprimido **Ejecutable.zip**, y accediendo a la carpeta *Ejecutable linux*, y solo hay que darle doble click y se ejecutara el programa.
 
